@@ -3,6 +3,8 @@ import * as GraphQLJSON from 'graphql-type-json'
 
 const typeDefs = [`schema.graphql`]
 
+const PORT = process.env.PORT || 4000
+
 const resolvers = {
   JSON: GraphQLJSON,
   Query: {
