@@ -1,0 +1,20 @@
+scalar JSON
+
+input TransformInput {
+  input: JSON!
+  formatter: String
+  schema: JSON
+}
+
+type TransformResult {
+  output: JSON
+}
+
+
+type Query {
+  hello(name: String): String
+}
+
+type Mutation {
+  transform(input: TransformInput): TransformResult
+}
