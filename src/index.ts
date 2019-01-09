@@ -3,7 +3,7 @@ import * as GraphQLJSON from 'graphql-type-json'
 
 const typeDefs = [`schema.graphql`]
 
-const PORT = process.env.PORT || 4000
+const port = process.env.PORT || 4000
 
 const resolvers = {
   JSON: GraphQLJSON,
@@ -17,7 +17,7 @@ const resolvers = {
   Mutation: {
     async transform(root, args, context, info) {
       return await {
-        output: []
+        results: []
       }
     }
   }
@@ -28,4 +28,4 @@ const server = new GraphQLServer({
   resolvers
 })
 
-server.start(() => console.log('Server is running on http://localhost:4000'))
+server.start({ port }, () => console.log(`Server is running on http://localhost:${port}`))
