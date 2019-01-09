@@ -9,7 +9,7 @@
     "dev": "npm-run-all --parallel start playground",
     "playground": "graphql playground",
     "build": "tsc",
-    "deploy": "now ."
+    "deploy": "git push heroku master"
   },
   "keywords": [],
   "author": "Tyler Garlick",
@@ -29,12 +29,5 @@
   },
   "engines": {
     "node": "11.6"
-  },
-  "now": {
-    "version": 1,
-    "type": "node",
-    "env": {
-      "NODE_ENV": "production"
-    }
   }
 }
